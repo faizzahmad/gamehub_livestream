@@ -12,7 +12,7 @@ const font = Poppins({
 
 export default function Logo() {
   return (
-    <div className=' flex flex-col items-center  gap-y-4 '>
+    <div className=' flex flex-col items-center  gap-y-4'>
         <div className=' bg-white rounded-full border p-2'>
          <span className=' text-[3rem] text-black'><GiOlive /></span>
         </div>
