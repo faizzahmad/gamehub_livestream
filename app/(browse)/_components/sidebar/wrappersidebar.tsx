@@ -4,6 +4,7 @@ import { cn } from "@/lib/utils";
 import { useIsClient } from "usehooks-ts";
 import ToggleSkelton from "./ToggleSkelton";
 import RecommendedSkelton from "./RecommendedSkelton";
+import { FollowingSkelton } from "./Following";
 interface WrapperProps {
     children: React.ReactNode;
 }
@@ -16,6 +17,7 @@ export const Wrapper = ({children}: WrapperProps) => {
         return (
             <aside className="fixed left-0 flex flex-col w-[70px] lg:w-60 h-full bg-[#2a2c37] border-r border-[#2a2c37] z-50 transition-all duration-150">
               <ToggleSkelton/>
+              <FollowingSkelton/>
               <RecommendedSkelton/>
             </aside>  
            );

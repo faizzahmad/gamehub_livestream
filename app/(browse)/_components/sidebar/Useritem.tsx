@@ -30,7 +30,7 @@ export default function Useritem({
             <UserAvatar
             imageUrl={imageUrl}
             username={username}
-            isLive={false}
+            isLive={isLive}
             />
             {!collapsed && (
                 <p className="truncate">
