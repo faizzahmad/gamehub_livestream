@@ -7,6 +7,8 @@ import { useEffect, useMemo, useState } from "react";
 import { useMediaQuery } from "usehooks-ts";
 import { ChatHeader } from "./chat-header";
 import { ChatForm } from "./chat-form";
+import { ChatList } from "./chat-list";
+import { ChatCommunity } from "./chat-community";
 
 interface ChatProps {
     hostName : string;
@@ -56,13 +58,18 @@ return messages.sort((a,b) => b.timestamp - a.timestamp);
 
             {variant === ChatVariant.CHAT && (
                 <>
+                <ChatList messages={reverseMessages} isHidden={isHidden}/>
                 <ChatForm onSubmit={onSubmit} value={value} onChange={onChange} isHidden={isHidden} isFollowersOnly = {isChatFollowersOnly} isDelayed={isChatDelayed} isFollowing={isFollowing}/>
                 </>
             )}
             {
                 variant === ChatVariant.COMMUNITY && (
                     <>
-                    <p>Community</p>
+                   <ChatCommunity
+                   viewerName={viewerName}
+                   hostName={hostName}
+                   isHidden={isHidden}
+                   />
                     </>
                 )
             }
