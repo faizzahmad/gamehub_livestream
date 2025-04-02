@@ -9,14 +9,14 @@ interface UnblockButtonProps {
     userId : string;
 };
 
-export const UnblockButton = async({userId} : UnblockButtonProps) => {
+export const UnblockButton = ({userId} : UnblockButtonProps) => {
     const [ispending,startTransition] = useTransition();
     const onClick = () => {
         startTransition(() => {
             onUnblock(userId)
             .then((res) => {
                 toast.success(`user ${res.blocked.username} unblocked`);
-            }).catch((err) => {
+            }).catch(() => {
                 toast.error("Something went wrong");
             }
             );

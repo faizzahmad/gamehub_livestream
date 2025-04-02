@@ -1,7 +1,7 @@
-import LiveBadge from "@/components/LiveBadge";
+
 import { Thumbnail, ThumbnailSkeleton } from "@/components/thumbnail";
 import { UserAvatar, UserAvatarSkeleton } from "@/components/UserAvatar";
-import { Stream, User } from "@prisma/client";
+import {  User } from "@prisma/client";
 import { Skeleton } from "@/components/ui/skeleton";
 import Link from "next/link";
 
