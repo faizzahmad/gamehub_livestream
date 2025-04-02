@@ -31,10 +31,9 @@ export const onBlock = async (id: string) => {
 }
 
 export const onUnblock = async (id: string) => {
+    const self = await getSelf();
     const unBlockledUser = await unblockUser(id);
-    revalidatePath("/");
-    if(unBlockledUser){
-        revalidatePath(`/${unBlockledUser.blocked.username}`);
-    }
+    revalidatePath(`/u/${self.username}/community`);
+  
     return unBlockledUser;
 }

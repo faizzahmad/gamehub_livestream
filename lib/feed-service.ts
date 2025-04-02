@@ -24,9 +24,14 @@ export const getStreams = async () => {
                     }
                 }
             },
-            include: {
-                user: true
-            },
+           
+           select : {
+            id : true,
+            user : true,
+            isLive : true,
+            name : true,
+            thumbnail : true,
+           },
             orderBy: [
                 {
                     isLive: 'desc'
@@ -38,9 +43,13 @@ export const getStreams = async () => {
         })
     } else {
         streams = await db.stream.findMany({
-            include: {
-                user: true
-            },
+            select : {
+                id : true,
+                user : true,
+                isLive : true,
+                name : true,
+                thumbnail : true,
+               },
             orderBy: [
                 {
                     isLive: 'desc'
